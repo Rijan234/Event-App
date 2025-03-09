@@ -1,17 +1,18 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<div>
+    <div>
+        @if(session('success'))
+    <p style="color: green;">{{ session('success') }}</p>
+@endif
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
     </div>
+    <form action="">
+        <h1>New Post</h1>
+        <label for="">Title</label> <br>
+        <input type="text" name="title" id=""> <br>
+        <label for="">Content</label> <br>
+        <textarea name="content" id="content" cols="60" rows="10"></textarea> <br>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
 </x-app-layout>
